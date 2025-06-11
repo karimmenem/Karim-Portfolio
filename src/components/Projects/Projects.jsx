@@ -69,14 +69,15 @@ const Projects = () => {
     }
   };
 
-  // Mock project stats for visual appeal
+  // Personal projects - no interactions/users needed
   const getProjectStats = (projectId) => {
     const statsMap = {
-      1: { stars: "2.3k", users: "500+", commits: "150+" },
-      2: { stars: "1.8k", users: "300+", commits: "120+" },
-      3: { stars: "1.2k", users: "200+", commits: "80+" }
+      1: { commits: "150+", features: "12", tech: "3" },
+      2: { commits: "120+", features: "8", tech: "3" },
+      3: { commits: "80+", features: "6", tech: "2" },
+      4: { commits: "90+", features: "5", tech: "3" }
     };
-    return statsMap[projectId] || { stars: "1k+", users: "100+", commits: "50+" };
+    return statsMap[projectId] || { commits: "50+", features: "4", tech: "2" };
   };
 
   return (
@@ -113,22 +114,37 @@ const Projects = () => {
                     transition={{ duration: 0.3 }}
                   >
                     <ProjectImageContainer>
-                      <ProjectImage>
-                        <FiCode size={60} />
+                      <ProjectImage $hasImage={project.image}>
+                        {project.image ? (
+                          <img 
+                            src={project.image} 
+                            alt={project.title}
+                            onError={(e) => {
+                              e.target.style.display = 'none';
+                              e.target.nextSibling.style.display = 'flex';
+                            }}
+                          />
+                        ) : null}
+                        <div className="fallback-icon">
+                          <FiCode size={60} />
+                        </div>
                       </ProjectImage>
                       <ProjectOverlay $isVisible={hoveredProject === project.id}>
                         <ProjectStats>
                           <StatItem>
-                            <StatIcon><FiStar /></StatIcon>
-                            <StatText>{stats.stars}</StatText>
-                          </StatItem>
-                          <StatItem>
-                            <StatIcon><FiUsers /></StatIcon>
-                            <StatText>{stats.users}</StatText>
-                          </StatItem>
-                          <StatItem>
                             <StatIcon><FiTrendingUp /></StatIcon>
                             <StatText>{stats.commits}</StatText>
+                            <span>Commits</span>
+                          </StatItem>
+                          <StatItem>
+                            <StatIcon><FiStar /></StatIcon>
+                            <StatText>{stats.features}</StatText>
+                            <span>Features</span>
+                          </StatItem>
+                          <StatItem>
+                            <StatIcon><FiCode /></StatIcon>
+                            <StatText>{stats.tech}</StatText>
+                            <span>Tech Stack</span>
                           </StatItem>
                         </ProjectStats>
                       </ProjectOverlay>
@@ -155,7 +171,7 @@ const Projects = () => {
                       </ProjectFeatures>
 
                       <ProjectLinks>
-                        {project.githubUrl && (
+                        {project.githubUrl ? (
                           <ProjectLink
                             href={project.githubUrl}
                             target="_blank"
@@ -165,7 +181,16 @@ const Projects = () => {
                             <FiGithub />
                             Code
                           </ProjectLink>
+                        ) : (
+                          <ProjectLink
+                            $disabled={true}
+                            title={project.isCoursework ? "Coursework - Repository not available" : "Repository not available"}
+                          >
+                            <FiGithub />
+                            {project.isCoursework ? "Coursework" : "Private"}
+                          </ProjectLink>
                         )}
+                        
                         {project.liveUrl ? (
                           <ProjectLink
                             href={project.liveUrl}
@@ -176,7 +201,7 @@ const Projects = () => {
                             <FiExternalLink />
                             Live Demo
                           </ProjectLink>
-                        ) : (
+                        ) : project.githubUrl ? (
                           <ProjectLink
                             href={project.githubUrl}
                             target="_blank"
@@ -185,6 +210,15 @@ const Projects = () => {
                           >
                             <FiGithub />
                             View Project
+                          </ProjectLink>
+                        ) : (
+                          <ProjectLink
+                            $disabled={true}
+                            $primary={true}
+                            title="This was a coursework project"
+                          >
+                            <FiCode />
+                            Course Project
                           </ProjectLink>
                         )}
                       </ProjectLinks>

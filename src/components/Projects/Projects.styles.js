@@ -90,8 +90,29 @@ export const ProjectImageContainer = styled.div`
 `;
 
 export const ProjectImage = styled.div`
-  color: ${({ theme }) => theme.colors.white};
-  opacity: 0.3;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  
+  .fallback-icon {
+    display: ${({ $hasImage }) => $hasImage ? 'none' : 'flex'};
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    color: ${({ theme }) => theme.colors.white};
+    opacity: 0.3;
+  }
 `;
 
 export const ProjectOverlay = styled.div`
@@ -119,6 +140,13 @@ export const StatItem = styled.div`
   align-items: center;
   gap: ${({ theme }) => theme.spacing.xs};
   color: ${({ theme }) => theme.colors.white};
+  
+  span:last-child {
+    font-size: ${({ theme }) => theme.fontSizes.xs};
+    opacity: 0.8;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
 `;
 
 export const StatIcon = styled.div`
@@ -217,24 +245,41 @@ export const ProjectLink = styled.a`
   transition: all 0.3s ease;
   justify-content: center;
   flex: 1;
+  cursor: ${({ $disabled }) => $disabled ? 'not-allowed' : 'pointer'};
   
-  ${({ $primary, theme }) => $primary ? `
-    background: ${theme.colors.gradientPrimary};
-    color: ${theme.colors.white};
-    
-    &:hover {
-      transform: translateY(-2px);
-      box-shadow: ${theme.shadows.lg};
+  ${({ $primary, $disabled, theme }) => {
+    if ($disabled) {
+      return `
+        background: ${theme.colors.lightGray}30;
+        color: ${theme.colors.gray}60;
+        border: 1px solid ${theme.colors.lightGray}30;
+        opacity: 0.6;
+        
+        &:hover {
+          background: ${theme.colors.lightGray}30;
+          color: ${theme.colors.gray}60;
+        }
+      `;
     }
-  ` : `
-    background: transparent;
-    color: ${theme.colors.gray};
-    border: 1px solid ${theme.colors.lightGray};
     
-    &:hover {
-      background: ${theme.colors.light};
-      color: ${theme.colors.dark};
-      border-color: ${theme.colors.primary};
-    }
-  `}
+    return $primary ? `
+      background: ${theme.colors.gradientPrimary};
+      color: ${theme.colors.white};
+      
+      &:hover {
+        transform: translateY(-2px);
+        box-shadow: ${theme.shadows.lg};
+      }
+    ` : `
+      background: transparent;
+      color: ${theme.colors.gray};
+      border: 1px solid ${theme.colors.lightGray};
+      
+      &:hover {
+        background: ${theme.colors.light};
+        color: ${theme.colors.dark};
+        border-color: ${theme.colors.primary};
+      }
+    `;
+  }}
 `;

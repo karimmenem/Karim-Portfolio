@@ -64,8 +64,8 @@ export const personalInfo = {
         "Interactive math challenges for different age groups"
       ],
       githubUrl: "https://github.com/karimmenem/math_adventure_game",
-      liveUrl: "", // Add if you have a deployed version
-      image: "/images/math-adventure-game.jpg", // Add your image to public/images/
+      liveUrl: "https://math-adventure-game.onrender.com/", // Add if you have a deployed version
+      image: "/images/MathAdventureGame.png", // Add your image to public/images/
       category: "Educational",
     },
     {
@@ -81,7 +81,7 @@ export const personalInfo = {
       ],
       githubUrl: "https://github.com/karimmenem/Community-Sharing",
       liveUrl: "",
-      image: "/images/share-space-platform.jpg", // Add your image to public/images/
+      image: "/images/ShareSpace.png", // Add your image to public/images/
       category: "Social Platform",
     },
     {
@@ -95,9 +95,9 @@ export const personalInfo = {
         "Advanced search and filtering system",
         "User profile tracking and contributor recognition"
       ],
-      githubUrl: "",
+      githubUrl: "", // No GitHub repository available
       liveUrl: "",
-      image: "/images/chefmania-recipe-platform.jpg", // Add your image to public/images/
+      image: "/images/ChefMania.png", // No image available - will show fallback
       category: "Community",
     },
     {
@@ -111,9 +111,9 @@ export const personalInfo = {
         "Assembly language emerges victorious at game end",
         "Responsive design with smooth animations"
       ],
-      githubUrl: "", // Add your GitHub link when ready
+      githubUrl: "https://github.com/karimmenem/ProgrammingLanguages-Hangman.git", // Add your GitHub link when ready
       liveUrl: "",
-      image: "/images/programming-hangman-game.jpg", // Add your image to public/images/
+      image: "/images/AssemblyEndgame.png", // Add your image to public/images/
       category: "Game",
     },
   ];
