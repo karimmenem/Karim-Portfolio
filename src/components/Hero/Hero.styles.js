@@ -9,7 +9,7 @@ export const HeroContainer = styled.section`
   background: ${({ theme }) => theme.colors.gradientHero};
   overflow: hidden;
   padding-top: 80px; // Account for fixed navbar
-  padding-bottom: 80px; // Space for scroll indicator
+  padding-bottom: 100px; // Space for scroll indicator
 `;
 
 export const BackgroundElements = styled.div`
@@ -206,8 +206,8 @@ export const SocialLink = styled.a`
 
 export const ScrollIndicator = styled.div`
   position: absolute;
-  bottom: 20px;
-  left: calc(50% - 10px);
+  bottom: -10px;
+  left: calc(50% - 78px);
   transform: translateX(-50%);
   display: flex;
   flex-direction: column;
@@ -235,7 +235,7 @@ export const ScrollIndicator = styled.div`
   }
   
   @media (max-width: ${({ theme }) => theme.breakpoints.sm}) {
-    bottom: 15px;
-    left: calc(50% - 5px);
+    bottom: -8px;
+    left: calc(50% - 70px);
   }
 `;

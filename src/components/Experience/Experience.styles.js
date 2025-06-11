@@ -385,12 +385,12 @@ export const EducationInstitution = styled.p`
 `;
 
 export const CertificationsSection = styled.div`
-  margin: ${({ theme }) => theme.spacing['3xl']} 0;
+  margin: ${({ theme }) => theme.spacing['2xl']} 0 0 0;
   
   h3 {
     font-size: ${({ theme }) => theme.fontSizes['2xl']};
     color: ${({ theme }) => theme.colors.dark};
-    margin-bottom: ${({ theme }) => theme.spacing.xl};
+    margin-bottom: ${({ theme }) => theme.spacing.lg};
     text-align: center;
     position: relative;
     

@@ -174,6 +174,11 @@ export const personalInfo = {
       issuer: "Udemy",
       year: "2025",
     },
+    {
+      name: "Advanced React Certificate",
+      issuer: "Scrimba",
+      year: "2025",
+    },
   ];
   
   export const languages = [

@@ -8,16 +8,16 @@ export const theme = {
       secondaryDark: '#d97706',
       accent: '#ef4444', // Red accent for highlights
       
-      // Rich neutrals with warmth - UPDATED FOR BETTER BACKGROUNDS
+      // Rich neutrals with warmth - MUCH LESS WHITE
       dark: '#1e1b4b', // Deep indigo instead of pure black
       darkSecondary: '#312e81',
       charcoal: '#374151',
       gray: '#6b7280',
       lightGray: '#d1d5db',
-      light: '#fafbfc', // Softer than pure white
-      offWhite: '#f8fafc', // Main background color
-      white: '#ffffff', // Only for cards and important elements
-      cream: '#fefefe', // Subtle warm white
+      light: '#e2e8f0', // Much darker than before
+      offWhite: '#f1f5f9', // Main background color - much darker
+      white: '#ffffff', // Only for important cards
+      cream: '#f8fafc', // Subtle warm alternative
       
       // Status colors
       success: '#10b981',
@@ -30,10 +30,10 @@ export const theme = {
       gradientHero: 'linear-gradient(135deg, #1e1b4b 0%, #312e81 35%, #6366f1 100%)',
       gradientAccent: 'linear-gradient(135deg, #ec4899 0%, #ef4444 100%)',
       
-      // Sophisticated background system
-      backgroundPrimary: 'linear-gradient(135deg, #fafbfc 0%, #f1f5f9 100%)', // Main page background
-      backgroundSecondary: 'linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%)', // Alternate sections
-      backgroundCard: 'linear-gradient(135deg, #ffffff 0%, #fefefe 100%)', // Cards
+      // Much darker, sophisticated background system
+      backgroundPrimary: 'linear-gradient(135deg, #e2e8f0 0%, #cbd5e1 100%)', // Much darker
+      backgroundSecondary: 'linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%)', // Darker alternate
+      backgroundCard: 'linear-gradient(135deg, #ffffff 0%, #f8fafc 100%)', // Cards remain white for contrast
       backgroundGlass: 'rgba(255, 255, 255, 0.25)', // Glass morphism effect
       
       // Subtle texture overlays

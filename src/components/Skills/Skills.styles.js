@@ -135,6 +135,11 @@ export const CategoryIcon = styled.div`
   border-radius: ${({ theme }) => theme.borderRadius.lg};
   color: ${({ $color }) => $color || '#2563eb'};
   font-size: ${({ theme }) => theme.fontSizes.xl};
+  flex-shrink: 0;
+  
+  svg {
+    margin: auto;
+  }
 `;
 
 export const CategoryTitle = styled.h3`

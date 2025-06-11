@@ -1,24 +1,32 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { FiCode, FiUsers, FiAward, FiTrendingUp } from 'react-icons/fi';
+import { FiCode, FiUsers, FiAward, FiTarget, FiHeart, FiZap } from 'react-icons/fi';
 import {
   AboutContainer,
   AboutContent,
-  AboutGrid,
+  AboutHero,
+  AboutImage,
   AboutText,
   AboutTitle,
   AboutDescription,
-  StatsGrid,
-  StatCard,
-  StatNumber,
-  StatLabel,
-  StatIcon,
-  HighlightCards,
-  HighlightCard,
-  CardIcon,
-  CardTitle,
-  CardDescription
+  AboutHighlight,
+  MetricsGrid,
+  MetricCard,
+  MetricNumber,
+  MetricLabel,
+  ValuesSection,
+  ValueItem,
+  ValueIcon,
+  ValueText,
+  JourneySection,
+  JourneyTitle,
+  JourneySteps,
+  JourneyStep,
+  StepNumber,
+  StepContent,
+  StepTitle,
+  StepDescription
 } from './About.styles';
 import { personalInfo } from '../../utils/constants';
 
@@ -34,7 +42,7 @@ const About = () => {
       opacity: 1,
       transition: {
         duration: 0.6,
-        staggerChildren: 0.2
+        staggerChildren: 0.1
       }
     }
   };
@@ -51,28 +59,44 @@ const About = () => {
     }
   };
 
-  const stats = [
+  const metrics = [
     { number: "15+", label: "Students Mentored", icon: FiUsers },
-    { number: "90%", label: "Completion Rate", icon: FiTrendingUp },
-    { number: "3+", label: "Years Teaching", icon: FiAward },
-    { number: "10+", label: "Projects Built", icon: FiCode }
+    { number: "90%", label: "Success Rate", icon: FiTarget },
+    { number: "2+", label: "Years Experience", icon: FiCode },
+    { number: "10+", label: "Projects Built", icon: FiZap }
   ];
 
-  const highlights = [
+  const values = [
     {
       icon: FiCode,
-      title: "Full-Stack Developer",
-      description: "Experienced in both frontend and backend development with modern technologies like React, Laravel, and PostgreSQL."
+      text: "Clean, maintainable code that scales"
     },
     {
       icon: FiUsers,
-      title: "Teaching & Mentoring",
-      description: "Passionate about sharing knowledge, having successfully mentored 15+ students with a 90%+ completion rate."
+      text: "Mentoring others and sharing knowledge"
     },
     {
-      icon: FiAward,
-      title: "Recent Graduate",
-      description: "Fresh Computer Science graduate from Lebanese American University with hands-on industry experience."
+      icon: FiHeart,
+      text: "Passionate about innovative solutions"
+    }
+  ];
+
+  const journeySteps = [
+    {
+      title: "Started Teaching",
+      description: "Began mentoring students in web development, discovering my passion for education and communication."
+    },
+    {
+      title: "Computer Science",
+      description: "Pursued formal education at Lebanese American University, building strong technical foundations."
+    },
+    {
+      title: "Industry Experience",
+      description: "Completed internship at Integrated Digital Systems, applying skills in real-world projects."
+    },
+    {
+      title: "Ready for Impact",
+      description: "Now seeking to contribute to innovative teams and continue growing as a software engineer."
     }
   ];
 
@@ -85,7 +109,17 @@ const About = () => {
           initial="hidden"
           animate={inView ? "visible" : "hidden"}
         >
-          <AboutGrid>
+          <AboutHero>
+            <AboutImage
+              as={motion.div}
+              variants={itemVariants}
+            >
+              <div className="image-placeholder">
+                <FiCode size={80} />
+                <span>Karim Menem</span>
+              </div>
+            </AboutImage>
+
             <AboutText>
               <motion.div variants={itemVariants}>
                 <AboutTitle>About Me</AboutTitle>
@@ -94,61 +128,86 @@ const About = () => {
               <motion.div variants={itemVariants}>
                 <AboutDescription>
                   <p>
-                    <strong>Computer Science graduate</strong> with hands-on experience in software development, 
-                    developing scalable web applications using React, Laravel, and PostgreSQL. Proven ability to 
-                    mentor others and work across the full development stack.
+                    I'm a <AboutHighlight>Computer Science graduate</AboutHighlight> with a unique blend 
+                    of technical expertise and teaching experience. My journey combines hands-on software 
+                    development with a passion for mentoring others.
                   </p>
                   <p>
-                    <strong>Passionate about clean, maintainable code</strong> and innovative software solutions. 
-                    Beyond coding, I've had the privilege of mentoring 15+ students in web development fundamentals, 
-                    achieving a 90%+ completion rate through personalized, project-based learning approaches.
+                    What sets me apart is my ability to <AboutHighlight>communicate complex technical concepts clearly</AboutHighlight> - 
+                    a skill honed through successfully mentoring 15+ students with a 90%+ completion rate.
                   </p>
                   <p>
-                    This teaching experience has strengthened my ability to <strong>communicate complex technical concepts clearly</strong> 
-                    and work effectively in collaborative environments, making me not just a developer, but a team player 
-                    who can bridge the gap between technical and non-technical stakeholders.
+                    I specialize in full-stack development using modern technologies like React, Laravel, 
+                    and PostgreSQL, always focusing on <AboutHighlight>clean, maintainable code</AboutHighlight> and 
+                    innovative problem-solving approaches.
                   </p>
                 </AboutDescription>
               </motion.div>
-
-              <motion.div variants={itemVariants}>
-                <StatsGrid>
-                  {stats.map((stat, index) => (
-                    <StatCard
-                      key={index}
-                      as={motion.div}
-                      variants={itemVariants}
-                      whileHover={{ y: -5 }}
-                    >
-                      <StatIcon>
-                        <stat.icon />
-                      </StatIcon>
-                      <StatNumber>{stat.number}</StatNumber>
-                      <StatLabel>{stat.label}</StatLabel>
-                    </StatCard>
-                  ))}
-                </StatsGrid>
-              </motion.div>
             </AboutText>
+          </AboutHero>
 
-            <HighlightCards>
-              {highlights.map((highlight, index) => (
-                <motion.div key={index} variants={itemVariants}>
-                  <HighlightCard
+          <motion.div variants={itemVariants}>
+            <MetricsGrid>
+              {metrics.map((metric, index) => (
+                <MetricCard
+                  key={index}
+                  as={motion.div}
+                  whileHover={{ y: -8, scale: 1.02 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <metric.icon size={32} />
+                  <MetricNumber>{metric.number}</MetricNumber>
+                  <MetricLabel>{metric.label}</MetricLabel>
+                </MetricCard>
+              ))}
+            </MetricsGrid>
+          </motion.div>
+
+          <ValuesSection>
+            <motion.div variants={itemVariants}>
+              <h3>What Drives Me</h3>
+            </motion.div>
+            <motion.div variants={itemVariants}>
+              <div>
+                {values.map((value, index) => (
+                  <ValueItem
+                    key={index}
                     as={motion.div}
-                    whileHover={{ y: -5, scale: 1.02 }}
+                    whileHover={{ x: 10 }}
                     transition={{ duration: 0.3 }}
                   >
-                    <CardIcon>
-                      <highlight.icon />
-                    </CardIcon>
-                    <CardTitle>{highlight.title}</CardTitle>
-                    <CardDescription>{highlight.description}</CardDescription>
-                  </HighlightCard>
+                    <ValueIcon>
+                      <value.icon />
+                    </ValueIcon>
+                    <ValueText>{value.text}</ValueText>
+                  </ValueItem>
+                ))}
+              </div>
+            </motion.div>
+          </ValuesSection>
+
+          <JourneySection>
+            <motion.div variants={itemVariants}>
+              <JourneyTitle>My Journey</JourneyTitle>
+            </motion.div>
+            <JourneySteps>
+              {journeySteps.map((step, index) => (
+                <motion.div key={index} variants={itemVariants}>
+                  <JourneyStep
+                    as={motion.div}
+                    whileHover={{ scale: 1.02 }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    <StepNumber>{index + 1}</StepNumber>
+                    <StepContent>
+                      <StepTitle>{step.title}</StepTitle>
+                      <StepDescription>{step.description}</StepDescription>
+                    </StepContent>
+                  </JourneyStep>
                 </motion.div>
               ))}
-            </HighlightCards>
-          </AboutGrid>
+            </JourneySteps>
+          </JourneySection>
         </motion.div>
       </AboutContent>
     </AboutContainer>
