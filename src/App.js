@@ -13,6 +13,7 @@ import Projects from './components/Projects/Projects';
 import Experience from './components/Experience/Experience';
 import Contact from './components/Contact/Contact';
 import Footer from './components/Layout/Footer';
+import SectionDivider from './components/Layout/SectionDivider';
 
 function App() {
   return (
@@ -23,10 +24,15 @@ function App() {
           <Navbar />
           <main>
             <Hero />
+            <SectionDivider />
             <About />
+            <SectionDivider />
             <Skills />
+            <SectionDivider />
             <Projects />
+            <SectionDivider />
             <Experience />
+            <SectionDivider />
             <Contact />
           </main>
           <Footer />

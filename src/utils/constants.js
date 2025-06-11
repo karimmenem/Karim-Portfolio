@@ -7,11 +7,11 @@ export const personalInfo = {
     github: "https://github.com/karimmenem",
     linkedin: "http://linkedin.com/in/karim-menem-b49630290",
     
-    
+    // Hero section
     tagline: "Building scalable web applications with clean, maintainable code",
     heroDescription: "Computer Science graduate passionate about creating innovative software solutions. I specialize in full-stack development and love mentoring others in their coding journey.",
     
-   
+    // About section
     aboutDescription: `Computer Science graduate with hands-on experience in software development, developing scalable web applications using React, Laravel, and PostgreSQL. Proven ability to mentor others and work across the full development stack. Passionate about clean, maintainable code and innovative software solutions.
     
     Beyond coding, I've had the privilege of mentoring 15+ students in web development fundamentals, achieving a 90%+ completion rate through personalized, project-based learning approaches. This teaching experience has strengthened my ability to communicate complex technical concepts clearly and work effectively in collaborative environments.`,
@@ -19,11 +19,11 @@ export const personalInfo = {
   
   export const skills = {
     languages: [
+      { name: "Java", level: 95 },
+      { name: "C", level: 90 },
       { name: "JavaScript", level: 90 },
       { name: "PHP", level: 85 },
       { name: "Python", level: 80 },
-      { name: "Java", level: 75 },
-      { name: "C", level: 70 },
     ],
     frontend: [
       { name: "React", level: 90 },
@@ -36,18 +36,18 @@ export const personalInfo = {
       { name: "Node.js", level: 85 },
       { name: "Express.js", level: 85 },
       { name: "Laravel", level: 80 },
-      { name: "RESTful APIs", level: 85 },
+      { name: "RESTful APIs", level: 90 },
     ],
     databases: [
-      { name: "PostgreSQL", level: 80 },
+      { name: "PostgreSQL", level: 85 },
       { name: "MySQL", level: 85 },
-      { name: "SQL Server", level: 75 },
+      { name: "SQL Server", level: 80 },
     ],
     tools: [
-      { name: "Git", level: 85 },
-      { name: "AWS", level: 70 },
-      { name: "Unit Testing", level: 75 },
-      { name: "Debugging", level: 85 },
+      { name: "Git", level: 90 },
+      { name: "AWS", level: 75 },
+      { name: "Unit Testing", level: 80 },
+      { name: "Debugging", level: 90 },
     ],
   };
   
@@ -65,7 +65,7 @@ export const personalInfo = {
       ],
       githubUrl: "https://github.com/karimmenem/math_adventure_game",
       liveUrl: "", // Add if you have a deployed version
-      image: "", // Add project image later
+      image: "/images/math-adventure-game.jpg", // Add your image to public/images/
       category: "Educational",
     },
     {
@@ -81,7 +81,7 @@ export const personalInfo = {
       ],
       githubUrl: "https://github.com/karimmenem/Community-Sharing",
       liveUrl: "",
-      image: "",
+      image: "/images/share-space-platform.jpg", // Add your image to public/images/
       category: "Social Platform",
     },
     {
@@ -97,8 +97,24 @@ export const personalInfo = {
       ],
       githubUrl: "",
       liveUrl: "",
-      image: "",
+      image: "/images/chefmania-recipe-platform.jpg", // Add your image to public/images/
       category: "Community",
+    },
+    {
+      id: 4,
+      title: "Programming Languages Hangman",
+      description: "Interactive React-based hangman game where wrong guesses kill programming languages, and Assembly wins in the end.",
+      technologies: ["React", "JavaScript", "CSS3"],
+      features: [
+        "Interactive hangman gameplay with programming theme",
+        "Visual representation of languages 'dying' with wrong guesses",
+        "Assembly language emerges victorious at game end",
+        "Responsive design with smooth animations"
+      ],
+      githubUrl: "", // Add your GitHub link when ready
+      liveUrl: "",
+      image: "/images/programming-hangman-game.jpg", // Add your image to public/images/
+      category: "Game",
     },
   ];
   

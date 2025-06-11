@@ -9,6 +9,7 @@ export const HeroContainer = styled.section`
   background: ${({ theme }) => theme.colors.gradientHero};
   overflow: hidden;
   padding-top: 80px; // Account for fixed navbar
+  padding-bottom: 80px; // Space for scroll indicator
 `;
 
 export const BackgroundElements = styled.div`
@@ -205,8 +206,8 @@ export const SocialLink = styled.a`
 
 export const ScrollIndicator = styled.div`
   position: absolute;
-  bottom: 2rem;
-  left: 50%;
+  bottom: 20px;
+  left: calc(50% - 10px);
   transform: translateX(-50%);
   display: flex;
   flex-direction: column;
@@ -219,11 +220,14 @@ export const ScrollIndicator = styled.div`
   
   &:hover {
     color: ${({ theme }) => theme.colors.white};
+    transform: translateX(-50%) translateY(-5px);
   }
   
   span {
     font-size: ${({ theme }) => theme.fontSizes.sm};
     font-weight: ${({ theme }) => theme.fontWeights.medium};
+    text-transform: uppercase;
+    letter-spacing: 1px;
   }
   
   svg {
@@ -231,6 +235,7 @@ export const ScrollIndicator = styled.div`
   }
   
   @media (max-width: ${({ theme }) => theme.breakpoints.sm}) {
-    bottom: 1.5rem;
+    bottom: 15px;
+    left: calc(50% - 5px);
   }
 `;
