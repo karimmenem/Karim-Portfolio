@@ -1,46 +1,55 @@
 export const theme = {
     colors: {
-      primary: '#2563eb', 
-      primaryDark: '#1d4ed8',
-      secondary: '#10b981', 
-      accent: '#f59e0b', 
+      // Modern sophisticated palette
+      primary: '#6366f1', // Indigo - sophisticated and modern
+      primaryDark: '#4f46e5',
+      primaryLight: '#818cf8',
+      secondary: '#f59e0b', // Amber - warm accent
+      secondaryDark: '#d97706',
+      accent: '#ef4444', // Red accent for highlights
       
-      
-      dark: '#0f172a',
-      darkSecondary: '#1e293b',
-      gray: '#64748b',
-      lightGray: '#cbd5e1',
+      // Rich neutrals with warmth
+      dark: '#1e1b4b', // Deep indigo instead of pure black
+      darkSecondary: '#312e81',
+      charcoal: '#374151',
+      gray: '#6b7280',
+      lightGray: '#d1d5db',
       light: '#f8fafc',
       white: '#ffffff',
       
-    
+      // Status colors
       success: '#10b981',
       warning: '#f59e0b',
       error: '#ef4444',
       
-    
-      gradientPrimary: 'linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%)',
-      gradientSecondary: 'linear-gradient(135deg, #10b981 0%, #059669 100%)',
-      gradientHero: 'linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #2563eb 100%)',
+      // Sophisticated gradients
+      gradientPrimary: 'linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%)',
+      gradientSecondary: 'linear-gradient(135deg, #f59e0b 0%, #f97316 100%)',
+      gradientHero: 'linear-gradient(135deg, #1e1b4b 0%, #312e81 35%, #6366f1 100%)',
+      gradientAccent: 'linear-gradient(135deg, #ec4899 0%, #ef4444 100%)',
+      
+      // Subtle background gradients
+      backgroundGradient: 'linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%)',
+      cardGradient: 'linear-gradient(135deg, #ffffff 0%, #f8fafc 100%)',
     },
     
     fonts: {
       primary: '"Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
-      heading: '"Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
-      mono: '"Fira Code", "SF Mono", Monaco, Inconsolata, "Roboto Mono", monospace',
+      heading: '"Space Grotesk", "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
+      mono: '"JetBrains Mono", "Fira Code", "SF Mono", Monaco, Inconsolata, "Roboto Mono", monospace',
     },
     
     fontSizes: {
-      xs: '0.75rem',    
-      sm: '0.875rem',   
-      base: '1rem',     
-      lg: '1.125rem',   
-      xl: '1.25rem',    
-      '2xl': '1.5rem',  
-      '3xl': '1.875rem',
-      '4xl': '2.25rem', 
-      '5xl': '3rem',    
-      '6xl': '3.75rem', 
+      xs: '0.75rem',    // 12px
+      sm: '0.875rem',   // 14px
+      base: '1rem',     // 16px
+      lg: '1.125rem',   // 18px
+      xl: '1.25rem',    // 20px
+      '2xl': '1.5rem',  // 24px
+      '3xl': '1.875rem', // 30px
+      '4xl': '2.25rem', // 36px
+      '5xl': '3rem',    // 48px
+      '6xl': '3.75rem', // 60px
     },
     
     fontWeights: {
@@ -53,14 +62,14 @@ export const theme = {
     },
     
     spacing: {
-      xs: '0.5rem',   
-      sm: '1rem',     
-      md: '1.5rem',   
-      lg: '2rem',     
-      xl: '3rem',     
-      '2xl': '4rem',  
-      '3xl': '6rem',  
-      '4xl': '8rem',  
+      xs: '0.5rem',   // 8px
+      sm: '1rem',     // 16px
+      md: '1.5rem',   // 24px
+      lg: '2rem',     // 32px
+      xl: '3rem',     // 48px
+      '2xl': '4rem',  // 64px
+      '3xl': '6rem',  // 96px
+      '4xl': '8rem',  // 128px
     },
     
     breakpoints: {
@@ -77,6 +86,11 @@ export const theme = {
       md: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
       lg: '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)',
       xl: '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
+      '2xl': '0 25px 50px -12px rgba(0, 0, 0, 0.25)',
+      
+      // Colored shadows for modern effect
+      primaryShadow: '0 10px 30px rgba(99, 102, 241, 0.2)',
+      secondaryShadow: '0 10px 30px rgba(245, 158, 11, 0.2)',
     },
     
     borderRadius: {
@@ -86,6 +100,7 @@ export const theme = {
       lg: '0.5rem',
       xl: '0.75rem',
       '2xl': '1rem',
+      '3xl': '1.5rem',
       full: '9999px',
     },
     
@@ -93,6 +108,7 @@ export const theme = {
       fast: '0.15s ease-in-out',
       base: '0.2s ease-in-out',
       slow: '0.3s ease-in-out',
+      elastic: '0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55)',
     },
     
     zIndex: {

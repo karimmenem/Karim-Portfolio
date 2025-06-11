@@ -156,7 +156,9 @@ export const personalInfo = {
       degree: "Bachelor of Science in Computer Science",
       institution: "Lebanese American University",
       location: "Beirut, Lebanon",
-      period: "2022 – 2025 (Expected)",
+      period: "2022 – 2025",
+      status: "Graduated",
+      logo: "/images/Lau.png", // Add LAU logo to public/images/
       gpa: "", // Add if you want to include
     },
   ];
