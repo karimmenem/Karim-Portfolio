@@ -1,7 +1,9 @@
 import styled from 'styled-components';
 
 export const AboutContainer = styled.section`
-  background: linear-gradient(135deg, ${({ theme }) => theme.colors.white} 0%, ${({ theme }) => theme.colors.light} 100%);
+  background: ${({ theme }) => theme.colors.backgroundSecondary};
+  background-size: 30px 30px;
+  background-image: ${({ theme }) => theme.colors.patternGrid};
   position: relative;
   overflow: hidden;
   
@@ -22,7 +24,7 @@ export const AboutContainer = styled.section`
     right: -10%;
     width: 400px;
     height: 400px;
-    background: ${({ theme }) => `radial-gradient(circle, ${theme.colors.primary}10, transparent 70%)`};
+    background: ${({ theme }) => `radial-gradient(circle, ${theme.colors.primary}08, transparent 70%)`};
     border-radius: 50%;
     pointer-events: none;
   }

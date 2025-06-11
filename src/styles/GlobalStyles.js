@@ -25,7 +25,9 @@ export const GlobalStyles = createGlobalStyle`
     font-weight: ${({ theme }) => theme.fontWeights.normal};
     line-height: 1.6;
     color: ${({ theme }) => theme.colors.dark};
-    background-color: ${({ theme }) => theme.colors.white};
+    background: ${({ theme }) => theme.colors.backgroundPrimary};
+    background-size: 20px 20px;
+    background-image: ${({ theme }) => theme.colors.patternDots};
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     overflow-x: hidden;
