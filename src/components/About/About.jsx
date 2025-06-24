@@ -114,9 +114,19 @@ const About = () => {
               as={motion.div}
               variants={itemVariants}
             >
-              <div className="image-placeholder">
-                <FiCode size={80} />
-                <span>Karim Menem</span>
+              <div className="image-container">
+                <img 
+                  src="/images/karim-profile.jpg" 
+                  alt="Karim Menem"
+                  onError={(e) => {
+                    e.target.style.display = 'none';
+                    e.target.nextSibling.style.display = 'flex';
+                  }}
+                />
+                <div className="fallback-placeholder">
+                  <FiCode size={80} />
+                  <span>Karim Menem</span>
+                </div>
               </div>
             </AboutImage>
 

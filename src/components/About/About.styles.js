@@ -48,18 +48,13 @@ export const AboutHero = styled.div`
 `;
 
 export const AboutImage = styled.div`
-  .image-placeholder {
+  .image-container {
     width: 280px;
     height: 280px;
-    background: ${({ theme }) => theme.colors.gradientPrimary};
     border-radius: 50%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    color: ${({ theme }) => theme.colors.white};
-    box-shadow: 0 20px 40px ${({ theme }) => theme.colors.primary}20;
     position: relative;
+    overflow: hidden;
+    box-shadow: 0 20px 40px ${({ theme }) => theme.colors.primary}20;
     
     &::before {
       content: '';
@@ -72,17 +67,40 @@ export const AboutImage = styled.div`
       filter: blur(8px);
     }
     
-    span {
-      font-size: ${({ theme }) => theme.fontSizes.lg};
-      font-weight: ${({ theme }) => theme.fontWeights.semibold};
-      margin-top: ${({ theme }) => theme.spacing.sm};
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      border-radius: 50%;
+    }
+    
+    .fallback-placeholder {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 100%;
+      background: ${({ theme }) => theme.colors.gradientPrimary};
+      color: ${({ theme }) => theme.colors.white};
+      border-radius: 50%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      
+      span {
+        font-size: ${({ theme }) => theme.fontSizes.lg};
+        font-weight: ${({ theme }) => theme.fontWeights.semibold};
+        margin-top: ${({ theme }) => theme.spacing.sm};
+      }
     }
   }
   
   @media (max-width: ${({ theme }) => theme.breakpoints.lg}) {
     justify-self: center;
     
-    .image-placeholder {
+    .image-container {
       width: 200px;
       height: 200px;
     }
