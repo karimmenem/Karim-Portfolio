@@ -1,4 +1,30 @@
 import styled from 'styled-components';
+// Filter controls for project categories
+export const FilterContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  gap: ${({ theme }) => theme.spacing.sm};
+  margin-bottom: ${({ theme }) => theme.spacing.lg};
+`;
+
+export const FilterButton = styled.button`
+  background: transparent;
+  border: 2px solid ${({ theme, className }) =>
+    className?.includes('active') ? theme.colors.primary : theme.colors.gray};
+  color: ${({ theme, className }) =>
+    className?.includes('active') ? theme.colors.primary : theme.colors.gray};
+  padding: ${({ theme }) => `${theme.spacing.xs} ${theme.spacing.sm}`};
+  border-radius: ${({ theme }) => theme.borderRadius.full};
+  font-size: ${({ theme }) => theme.fontSizes.sm};
+  cursor: pointer;
+  transition: ${({ theme }) => theme.transitions.fast};
+
+  &:hover {
+    background: ${({ theme }) => theme.colors.primary};
+    color: ${({ theme }) => theme.colors.white};
+    border-color: ${({ theme }) => theme.colors.primary};
+  }
+`;
 
 export const ProjectsContainer = styled.section`
   background: linear-gradient(135deg, ${({ theme }) => theme.colors.light} 0%, ${({ theme }) => theme.colors.white} 100%);

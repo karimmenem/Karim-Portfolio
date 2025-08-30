@@ -116,6 +116,22 @@ export const personalInfo = {
       image: "/images/AssemblyEndgame.png", // Add your image to public/images/
       category: "Game",
     },
+    {
+      id: 5,
+      title: "YouTools",
+      description: "E-commerce platform selling high-quality hardware tools (e.g., Ingco and other top brands), featuring a product catalog, secure checkout, order tracking, and user reviews.",
+      technologies: ["Node.js", "Express.js", "YouTube API", "React"],
+      features: [
+        "Product catalog of Ingco and other top-brand tools",
+        "Secure checkout with multiple payment options",
+        "Order tracking dashboard",
+        "Customer reviews and ratings"
+      ],
+      githubUrl: "https://github.com/karimmenem/YouTools",
+      liveUrl: "",
+      image: "/images/YouTools.png", // Add YourTools image to public/images/
+      category: "Productivity",
+    },
   ];
   
   export const experience = [

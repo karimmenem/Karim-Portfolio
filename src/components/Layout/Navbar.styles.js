@@ -7,10 +7,10 @@ export const NavbarContainer = styled.nav`
   right: 0;
   z-index: ${({ theme }) => theme.zIndex.sticky};
   background-color: ${({ $scrolled, theme }) => 
-    $scrolled ? 'rgba(255, 255, 255, 0.95)' : 'transparent'};
+    $scrolled ? 'rgba(247, 250, 252, 0.95)' : 'transparent'};
   backdrop-filter: ${({ $scrolled }) => $scrolled ? 'blur(10px)' : 'none'};
   border-bottom: ${({ $scrolled, theme }) => 
-    $scrolled ? `1px solid ${theme.colors.lightGray}` : 'none'};
+    $scrolled ? `1px solid ${theme.colors.border}` : 'none'};
   transition: ${({ theme }) => theme.transitions.base};
   padding: ${({ theme }) => theme.spacing.sm} 0;
 `;
@@ -26,12 +26,12 @@ export const Logo = styled.a`
   font-family: ${({ theme }) => theme.fonts.heading};
   font-size: ${({ theme }) => theme.fontSizes.xl};
   font-weight: ${({ theme }) => theme.fontWeights.bold};
-  color: ${({ theme }) => theme.colors.dark};
+  color: ${({ theme }) => theme.colors.primary};
   text-decoration: none;
   transition: ${({ theme }) => theme.transitions.fast};
   
   &:hover {
-    color: ${({ theme }) => theme.colors.primary};
+    color: ${({ theme }) => theme.colors.secondary};
   }
 `;
 
@@ -52,7 +52,7 @@ export const NavItem = styled.li`
 `;
 
 export const NavLink = styled.a`
-  color: ${({ theme }) => theme.colors.gray};
+  color: ${({ theme }) => theme.colors.textMid};
   font-weight: ${({ theme }) => theme.fontWeights.medium};
   font-size: ${({ theme }) => theme.fontSizes.base};
   text-decoration: none;

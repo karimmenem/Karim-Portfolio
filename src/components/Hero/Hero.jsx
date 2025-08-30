@@ -13,9 +13,7 @@ import {
   SecondaryButton,
   SocialLinks,
   SocialLink,
-  ScrollIndicator,
-  BackgroundElements,
-  FloatingElement
+  ScrollIndicator
 } from './Hero.styles';
 import { personalInfo } from '../../utils/constants';
 
@@ -71,26 +69,6 @@ const Hero = () => {
 
   return (
     <HeroContainer id="hero">
-      <BackgroundElements>
-        <FloatingElement
-          as={motion.div}
-          variants={floatingVariants}
-          animate="animate"
-          $delay={0}
-        />
-        <FloatingElement
-          as={motion.div}
-          variants={floatingVariants}
-          animate="animate"
-          $delay={1}
-        />
-        <FloatingElement
-          as={motion.div}
-          variants={floatingVariants}
-          animate="animate"
-          $delay={2}
-        />
-      </BackgroundElements>
 
       <HeroContent className="container">
         <motion.div

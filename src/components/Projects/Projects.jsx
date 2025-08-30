@@ -34,7 +34,9 @@ import {
   ProjectStats,
   StatItem,
   StatIcon,
-  StatText
+  StatText,
+  FilterContainer,
+  FilterButton
 } from './Projects.styles';
 import { projects } from '../../utils/constants';
 
@@ -45,6 +47,11 @@ const Projects = () => {
   });
 
   const [hoveredProject, setHoveredProject] = useState(null);
+  const [selectedCategory, setSelectedCategory] = useState('All');
+  const categories = ['All', ...Array.from(new Set(projects.map(p => p.category)))];
+  const filteredProjects = selectedCategory === 'All'
+    ? projects
+    : projects.filter(p => p.category === selectedCategory);
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -98,10 +105,23 @@ const Projects = () => {
                 A showcase of my technical skills through real-world applications
               </ProjectsSubtitle>
             </motion.div>
+            <motion.div variants={itemVariants}>
+              <FilterContainer>
+                {categories.map(cat => (
+                  <FilterButton
+                    key={cat}
+                    className={selectedCategory === cat ? 'active' : ''}
+                    onClick={() => setSelectedCategory(cat)}
+                  >
+                    {cat}
+                  </FilterButton>
+                ))}
+              </FilterContainer>
+            </motion.div>
           </ProjectsHeader>
 
           <ProjectsGrid>
-            {projects.map((project, index) => {
+            {filteredProjects.map((project, index) => {
               const stats = getProjectStats(project.id);
               
               return (
