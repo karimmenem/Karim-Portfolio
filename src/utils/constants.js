@@ -64,12 +64,45 @@ export const personalInfo = {
         "Interactive math challenges for different age groups"
       ],
       githubUrl: "https://github.com/karimmenem/math_adventure_game",
-      liveUrl: "https://math-adventure-game.onrender.com/", // Add if you have a deployed version
-      image: "/images/MathAdventureGame.png", // Add your image to public/images/
+      liveUrl: "https://math-adventure-game.onrender.com/",
+      image: "/images/MathAdventureGame.png",
       category: "Educational",
     },
     {
       id: 2,
+      title: "Encelyte",
+      description: "Professional IT consulting and digital transformation company website offering cutting-edge technology solutions across Europe and MEA regions.",
+      technologies: ["React", "JavaScript", "CSS3"],
+      features: [
+        "Modern responsive design with smooth animations",
+        "Strategic consulting and IT services showcase",
+        "Regional market presence across Europe and MEA",
+        "Professional portfolio and client testimonials",
+        "Contact forms and business inquiry system"
+      ],
+      githubUrl: "https://github.com/karimmenem/Encelyte_React",
+      liveUrl: "https://encelyte.vercel.app/",
+      image: "/images/Encelyte.png",
+      category: "Business",
+    },
+    {
+      id: 3,
+      title: "YouTools",
+      description: "E-commerce platform selling high-quality hardware tools (e.g., Ingco and other top brands), featuring a product catalog, secure checkout, order tracking, and user reviews.",
+      technologies: ["Node.js", "Express.js", "YouTube API", "React"],
+      features: [
+        "Product catalog of Ingco and other top-brand tools",
+        "Secure checkout with multiple payment options",
+        "Order tracking dashboard",
+        "Customer reviews and ratings"
+      ],
+      githubUrl: "https://github.com/karimmenem/YouTools",
+      liveUrl: "https://youtools-sable.vercel.app/",
+      image: "/images/YouTools.png",
+      category: "Productivity",
+    },
+    {
+      id: 4,
       title: "Share Space Platform",
       description: "Full-stack social platform for content creation and sharing with secure authentication and real-time features.",
       technologies: ["Laravel", "PHP", "PostgreSQL"],
@@ -81,11 +114,11 @@ export const personalInfo = {
       ],
       githubUrl: "https://github.com/karimmenem/Community-Sharing",
       liveUrl: "",
-      image: "/images/ShareSpace.png", // Add your image to public/images/
+      image: "/images/ShareSpace.png",
       category: "Social Platform",
     },
     {
-      id: 3,
+      id: 5,
       title: "ChefMania Recipe Platform",
       description: "Recipe-sharing community with intelligent algorithms for monthly highlights and advanced search capabilities.",
       technologies: ["PHP", "React"],
@@ -95,13 +128,13 @@ export const personalInfo = {
         "Advanced search and filtering system",
         "User profile tracking and contributor recognition"
       ],
-      githubUrl: "", // No GitHub repository available
+      githubUrl: "",
       liveUrl: "",
-      image: "/images/ChefMania.png", // No image available - will show fallback
+      image: "/images/ChefMania.png",
       category: "Community",
     },
     {
-      id: 4,
+      id: 6,
       title: "Programming Languages Hangman",
       description: "Interactive React-based hangman game where wrong guesses kill programming languages, and Assembly wins in the end.",
       technologies: ["React", "JavaScript", "CSS3"],
@@ -111,26 +144,10 @@ export const personalInfo = {
         "Assembly language emerges victorious at game end",
         "Responsive design with smooth animations"
       ],
-      githubUrl: "https://github.com/karimmenem/ProgrammingLanguages-Hangman.git", // Add your GitHub link when ready
-      liveUrl: "",
-      image: "/images/AssemblyEndgame.png", // Add your image to public/images/
+      githubUrl: "https://github.com/karimmenem/ProgrammingLanguages-Hangman.git",
+      liveUrl: "https://programming-languages-hangman-1o3whurzm.vercel.app",
+      image: "/images/AssemblyEndgame.png",
       category: "Game",
-    },
-    {
-      id: 5,
-      title: "YouTools",
-      description: "E-commerce platform selling high-quality hardware tools (e.g., Ingco and other top brands), featuring a product catalog, secure checkout, order tracking, and user reviews.",
-      technologies: ["Node.js", "Express.js", "YouTube API", "React"],
-      features: [
-        "Product catalog of Ingco and other top-brand tools",
-        "Secure checkout with multiple payment options",
-        "Order tracking dashboard",
-        "Customer reviews and ratings"
-      ],
-      githubUrl: "https://github.com/karimmenem/YouTools",
-      liveUrl: "",
-      image: "/images/YouTools.png", // Add YourTools image to public/images/
-      category: "Productivity",
     },
   ];
   
