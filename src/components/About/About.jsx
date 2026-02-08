@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { FiCode, FiUsers, FiTarget, FiHeart, FiZap } from 'react-icons/fi';
+import { FiCode} from 'react-icons/fi';
 import {
   AboutContainer,
   AboutContent,
@@ -11,14 +11,7 @@ import {
   AboutTitle,
   AboutDescription,
   AboutHighlight,
-  MetricsGrid,
-  MetricCard,
-  MetricNumber,
-  MetricLabel,
-  ValuesSection,
-  ValueItem,
-  ValueIcon,
-  ValueText,
+
   JourneySection,
   JourneyTitle,
   JourneySteps,
@@ -28,7 +21,7 @@ import {
   StepTitle,
   StepDescription
 } from './About.styles';
-import { personalInfo } from '../../utils/constants';
+
 
 const About = () => {
   const [ref, inView] = useInView({
@@ -59,27 +52,6 @@ const About = () => {
     }
   };
 
-  const metrics = [
-    { number: "15+", label: "Students Mentored", icon: FiUsers },
-    { number: "90%", label: "Success Rate", icon: FiTarget },
-    { number: "2+", label: "Years Experience", icon: FiCode },
-    { number: "10+", label: "Projects Built", icon: FiZap }
-  ];
-
-  const values = [
-    {
-      icon: FiCode,
-      text: "Clean, maintainable code that scales"
-    },
-    {
-      icon: FiUsers,
-      text: "Mentoring others and sharing knowledge"
-    },
-    {
-      icon: FiHeart,
-      text: "Passionate about innovative solutions"
-    }
-  ];
 
   const journeySteps = [
     {

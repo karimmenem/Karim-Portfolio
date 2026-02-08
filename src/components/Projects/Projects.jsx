@@ -6,7 +6,7 @@ import {
   FiExternalLink, 
   FiCode, 
   FiStar,
-  FiUsers,
+
   FiTrendingUp,
   FiPlay
 } from 'react-icons/fi';
@@ -35,8 +35,7 @@ import {
   StatItem,
   StatIcon,
   StatText,
-  FilterContainer,
-  FilterButton
+
 } from './Projects.styles';
 import { projects } from '../../utils/constants';
 
