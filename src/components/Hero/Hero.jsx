@@ -41,16 +41,7 @@ const Hero = () => {
     }
   };
 
-  const floatingVariants = {
-    animate: {
-      y: [-10, 10, -10],
-      transition: {
-        duration: 3,
-        repeat: Infinity,
-        ease: "easeInOut"
-      }
-    }
-  };
+
 
   const handleScrollToNext = () => {
     const aboutSection = document.querySelector('#about');

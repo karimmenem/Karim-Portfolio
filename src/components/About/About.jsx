@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { FiCode, FiUsers, FiAward, FiTarget, FiHeart, FiZap } from 'react-icons/fi';
+import { FiCode, FiUsers, FiTarget, FiHeart, FiZap } from 'react-icons/fi';
 import {
   AboutContainer,
   AboutContent,

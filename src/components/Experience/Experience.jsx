@@ -7,9 +7,7 @@ import {
   FiMapPin, 
   FiCalendar,
   FiAward,
-  FiTrendingUp,
-  FiCode,
-  FiGitBranch
+
 } from 'react-icons/fi';
 import {
   ExperienceContainer,
@@ -33,11 +31,7 @@ import {
   AchievementItem,
   SkillsUsed,
   SkillTag,
-  StatsGrid,
-  StatCard,
-  StatIcon,
-  StatNumber,
-  StatLabel,
+  
   EducationSection,
   EducationCard,
   EducationIcon,
@@ -78,12 +72,7 @@ const Experience = () => {
     }
   };
 
-  const experienceStats = [
-    { icon: FiCode, number: "2+", label: "Years Coding", color: "#2563eb" },
-    { icon: FiUsers, number: "15+", label: "Students Mentored", color: "#10b981" },
-    { icon: FiTrendingUp, number: "90%", label: "Success Rate", color: "#f59e0b" },
-    { icon: FiGitBranch, number: "10+", label: "Projects Built", color: "#ef4444" }
-  ];
+
 
   const getExperienceIcon = (type) => {
     return type === 'teaching' ? FiUsers : FiBriefcase;

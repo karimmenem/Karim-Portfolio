@@ -47,11 +47,8 @@ const Projects = () => {
   });
 
   const [hoveredProject, setHoveredProject] = useState(null);
-  const [selectedCategory, setSelectedCategory] = useState('All');
-  const categories = ['All', ...Array.from(new Set(projects.map(p => p.category)))];
-  const filteredProjects = selectedCategory === 'All'
-    ? projects
-    : projects.filter(p => p.category === selectedCategory);
+  
+
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -109,7 +106,7 @@ const Projects = () => {
           </ProjectsHeader>
 
           <ProjectsGrid>
-            {filteredProjects.map((project, index) => {
+            {projects.map((project, index) => {
               const stats = getProjectStats(project.id);
               
               return (
