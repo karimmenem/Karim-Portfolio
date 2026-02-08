@@ -34,7 +34,7 @@ const Navbar = () => {
   return (
     <NavbarContainer $scrolled={scrolled}>
       <NavbarWrapper className="container">
-        <Logo href="#hero" onClick={(e) => {
+        <Logo $scrolled={scrolled} href="#hero" onClick={(e) => {
           e.preventDefault();
           handleNavClick('#hero');
         }}>
@@ -46,6 +46,7 @@ const Navbar = () => {
           {navItems.map((item, index) => (
             <NavItem key={index}>
               <NavLink 
+                $scrolled={scrolled}
                 href={item.href}
                 onClick={(e) => {
                   e.preventDefault();
@@ -70,6 +71,7 @@ const Navbar = () => {
           {navItems.map((item, index) => (
             <NavItem key={index}>
               <NavLink 
+                $scrolled={scrolled}
                 href={item.href}
                 onClick={(e) => {
                   e.preventDefault();

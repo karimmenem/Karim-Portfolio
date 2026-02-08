@@ -12,9 +12,9 @@ export const personalInfo = {
     heroDescription: "Computer Science graduate passionate about creating innovative software solutions. I specialize in full-stack development and love mentoring others in their coding journey.",
     
     // About section
-    aboutDescription: `Computer Science graduate with hands-on experience in software development, developing scalable web applications using React, Laravel, and PostgreSQL. Proven ability to mentor others and work across the full development stack. Passionate about clean, maintainable code and innovative software solutions.
+    aboutDescription: `Computer Science graduate and Junior Software Engineer at The ARK Networks with hands-on experience developing scalable web applications using React, Next.js, TypeScript, and PostgreSQL. Proven ability to mentor others and work across the full development stack. Passionate about clean, maintainable code and innovative software solutions.
     
-    Beyond coding, I've had the privilege of mentoring 15+ students in web development fundamentals, achieving a 90%+ completion rate through personalized, project-based learning approaches. This teaching experience has strengthened my ability to communicate complex technical concepts clearly and work effectively in collaborative environments.`,
+    Currently focused on developing and maintaining user-facing features for production applications while collaborating with designers and backend engineers in an Agile environment. Beyond my professional work, I've had the privilege of mentoring 15+ students in web development fundamentals, achieving a 90%+ completion rate through personalized, project-based learning approaches. This diverse experience has strengthened my ability to communicate complex technical concepts clearly and work effectively in collaborative environments.`,
   };
   
   export const skills = {
@@ -22,15 +22,18 @@ export const personalInfo = {
       { name: "Java", level: 95 },
       { name: "C", level: 90 },
       { name: "JavaScript", level: 90 },
+      { name: "TypeScript", level: 85 },
       { name: "PHP", level: 85 },
       { name: "Python", level: 80 },
     ],
     frontend: [
       { name: "React", level: 90 },
+      { name: "Next.js", level: 85 },
       { name: "HTML5", level: 95 },
       { name: "CSS3", level: 90 },
+      { name: "SCSS", level: 85 },
       { name: "Bootstrap", level: 85 },
-      { name: "EJS", level: 75 },
+
     ],
     backend: [
       { name: "Node.js", level: 85 },
@@ -41,6 +44,7 @@ export const personalInfo = {
     databases: [
       { name: "PostgreSQL", level: 85 },
       { name: "MySQL", level: 85 },
+      { name: "Firebase", level: 75 },
       { name: "SQL Server", level: 80 },
     ],
     tools: [
@@ -52,6 +56,7 @@ export const personalInfo = {
   };
   
   export const projects = [
+
     {
       id: 1,
       title: "Math Adventure Game",
@@ -68,8 +73,42 @@ export const personalInfo = {
       image: "/images/MathAdventureGame.png",
       category: "Educational",
     },
+
     {
       id: 2,
+      title: "YouTools",
+      description: "E-commerce platform selling high-quality hardware tools (e.g., Ingco and other top brands), featuring a product catalog, secure checkout, order tracking, and user reviews.",
+      technologies: ["Node.js", "Express.js", "YouTube API", "React"],
+      features: [
+        "Product catalog of Ingco and other top-brand tools",
+        "Secure checkout with multiple payment options",
+        "Order tracking dashboard",
+        "Customer reviews and ratings"
+      ],
+      githubUrl: "https://github.com/karimmenem/YouTools",
+      liveUrl: "https://youtools-br.com/",
+      image: "/images/YouTools.png",
+      category: "Productivity",
+    },
+    {
+      id: 3,
+      title: "CaniCat",
+      description: "Premium pet services platform with modern UI/UX design and content management system for dynamic service showcases.",
+      technologies: ["React", "Next.js", "Firebase", "SCSS"],
+      features: [
+        "Professional website for pet services",
+        "Modern UI/UX design with responsive layout",
+        "Content management system for dynamic service showcases",
+        "Mobile and web app development capabilities"
+      ],
+      githubUrl: "",
+      liveUrl: "https://canicat.clinic/",
+      image: "/images/canicatimage.png",
+      category: "Business",
+    },
+    
+    {
+      id: 4,
       title: "Encelyte",
       description: "Professional IT consulting and digital transformation company website offering cutting-edge technology solutions across Europe and MEA regions.",
       technologies: ["React", "JavaScript", "CSS3"],
@@ -85,24 +124,9 @@ export const personalInfo = {
       image: "/images/Encelyte.png",
       category: "Business",
     },
+    
     {
-      id: 3,
-      title: "YouTools",
-      description: "E-commerce platform selling high-quality hardware tools (e.g., Ingco and other top brands), featuring a product catalog, secure checkout, order tracking, and user reviews.",
-      technologies: ["Node.js", "Express.js", "YouTube API", "React"],
-      features: [
-        "Product catalog of Ingco and other top-brand tools",
-        "Secure checkout with multiple payment options",
-        "Order tracking dashboard",
-        "Customer reviews and ratings"
-      ],
-      githubUrl: "https://github.com/karimmenem/YouTools",
-      liveUrl: "https://youtools-sable.vercel.app/",
-      image: "/images/YouTools.png",
-      category: "Productivity",
-    },
-    {
-      id: 4,
+      id: 5,
       title: "Share Space Platform",
       description: "Full-stack social platform for content creation and sharing with secure authentication and real-time features.",
       technologies: ["Laravel", "PHP", "PostgreSQL"],
@@ -117,22 +141,7 @@ export const personalInfo = {
       image: "/images/ShareSpace.png",
       category: "Social Platform",
     },
-    {
-      id: 5,
-      title: "ChefMania Recipe Platform",
-      description: "Recipe-sharing community with intelligent algorithms for monthly highlights and advanced search capabilities.",
-      technologies: ["PHP", "React"],
-      features: [
-        "Voting and ranking system for recipes",
-        "Intelligent algorithm for monthly highlights",
-        "Advanced search and filtering system",
-        "User profile tracking and contributor recognition"
-      ],
-      githubUrl: "",
-      liveUrl: "",
-      image: "/images/ChefMania.png",
-      category: "Community",
-    },
+   
     {
       id: 6,
       title: "Programming Languages Hangman",
@@ -154,6 +163,21 @@ export const personalInfo = {
   export const experience = [
     {
       id: 1,
+      title: "Junior Software Engineer",
+      company: "The ARK Networks",
+      period: "Sep 2025 – Present",
+      location: "Hamra, Beirut, Lebanon",
+      description: "Developed and maintained user-facing features for a production web application using React, Next, and TypeScript. Improved application performance and stability through bug fixes and component optimization while collaborating with designers and backend engineers in an Agile environment.",
+      achievements: [
+        "Developed and maintained user-facing features for a production web application using React, Next, and TypeScript",
+        "Improved application performance and stability by fixing bugs and optimizing existing components",
+        "Collaborated with designers and backend engineers in an Agile team environment to deliver end-to-end features"
+      ],
+      type: "work",
+      logo: "/images/thearklogo.jpeg"
+    },
+    {
+      id: 2,
       title: "Full-Stack Developer (Intern)",
       company: "Integrated Digital Systems",
       period: "December 2024 – January 2025",
@@ -165,10 +189,11 @@ export const personalInfo = {
         "Collaborated in agile environment with code reviews and sprint planning",
         "Implemented testing strategies and performance optimization"
       ],
-      type: "internship"
+      type: "internship",
+      logo: "/images/IDS.png"
     },
     {
-      id: 2,
+      id: 3,
       title: "Web Development Instructor",
       company: "Freelance",
       period: "August 2022 – January 2024",
@@ -180,7 +205,8 @@ export const personalInfo = {
         "Achieved 90%+ student completion rate through project-based learning approach",
         "Developed teaching materials and assessment strategies"
       ],
-      type: "teaching"
+      type: "teaching",
+      logo: "/images/laulogosmall.png"
     },
   ];
   

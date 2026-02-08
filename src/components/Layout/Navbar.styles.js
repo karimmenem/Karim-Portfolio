@@ -7,12 +7,12 @@ export const NavbarContainer = styled.nav`
   right: 0;
   z-index: ${({ theme }) => theme.zIndex.sticky};
   background-color: ${({ $scrolled, theme }) => 
-    $scrolled ? 'rgba(247, 250, 252, 0.95)' : 'transparent'};
-  backdrop-filter: ${({ $scrolled }) => $scrolled ? 'blur(10px)' : 'none'};
+    $scrolled ? 'rgba(255, 255, 255, 0.8)' : 'transparent'};
+  backdrop-filter: ${({ $scrolled }) => $scrolled ? 'blur(8px)' : 'none'};
   border-bottom: ${({ $scrolled, theme }) => 
     $scrolled ? `1px solid ${theme.colors.border}` : 'none'};
   transition: ${({ theme }) => theme.transitions.base};
-  padding: ${({ theme }) => theme.spacing.sm} 0;
+  padding: 1rem 0;
 `;
 
 export const NavbarWrapper = styled.div`
@@ -20,18 +20,23 @@ export const NavbarWrapper = styled.div`
   align-items: center;
   justify-content: space-between;
   position: relative;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 2rem;
 `;
 
 export const Logo = styled.a`
   font-family: ${({ theme }) => theme.fonts.heading};
-  font-size: ${({ theme }) => theme.fontSizes.xl};
+  font-size: ${({ theme }) => theme.fontSizes.lg};
   font-weight: ${({ theme }) => theme.fontWeights.bold};
-  color: ${({ theme }) => theme.colors.primary};
+  color: ${({ $scrolled, theme }) => $scrolled ? theme.colors.primary : "white"};
   text-decoration: none;
   transition: ${({ theme }) => theme.transitions.fast};
+  letter-spacing: -0.5px;
   
   &:hover {
-    color: ${({ theme }) => theme.colors.secondary};
+    transform: translateY(-1px);
+    color: ${({ $scrolled, theme }) => $scrolled ? theme.colors.primary : "white"} !important;
   }
 `;
 
@@ -40,7 +45,7 @@ export const NavMenu = styled.ul`
   list-style: none;
   margin: 0;
   padding: 0;
-  gap: ${({ theme }) => theme.spacing.lg};
+  gap: 3rem;
   
   @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
     display: none;
@@ -52,27 +57,27 @@ export const NavItem = styled.li`
 `;
 
 export const NavLink = styled.a`
-  color: ${({ theme }) => theme.colors.textMid};
+  color: ${({ $scrolled, theme }) => $scrolled ? theme.colors.primary : "white"};
   font-weight: ${({ theme }) => theme.fontWeights.medium};
   font-size: ${({ theme }) => theme.fontSizes.base};
   text-decoration: none;
   position: relative;
   transition: ${({ theme }) => theme.transitions.fast};
-  padding: ${({ theme }) => theme.spacing.xs} 0;
+  padding: 0.5rem 0;
   
   &:hover {
-    color: ${({ theme }) => theme.colors.primary};
+    color: ${({ $scrolled, theme }) => $scrolled ? theme.colors.primary : "white"} !important;
   }
   
   &::after {
     content: '';
     position: absolute;
-    bottom: -2px;
+    bottom: 0;
     left: 0;
     width: 0;
     height: 2px;
-    background-color: ${({ theme }) => theme.colors.primary};
-    transition: ${({ theme }) => theme.transitions.fast};
+    background: linear-gradient(90deg, ${({ theme }) => theme.colors.primary}, ${({ theme }) => theme.colors.secondary});
+    transition: width ${({ theme }) => theme.transitions.fast};
   }
   
   &:hover::after {
@@ -84,10 +89,12 @@ export const MobileMenuButton = styled.button`
   display: none;
   flex-direction: column;
   background: none;
-  width: 24px;
-  height: 24px;
+  border: none;
+  width: 28px;
+  height: 28px;
   cursor: pointer;
   position: relative;
+  padding: 0;
   
   @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
     display: flex;
@@ -95,11 +102,12 @@ export const MobileMenuButton = styled.button`
   
   span {
     width: 100%;
-    height: 2px;
-    background-color: ${({ theme }) => theme.colors.dark};
-    margin: 2px 0;
+    height: 2.5px;
+    background-color: ${({ theme }) => theme.colors.textMid};
+    margin: 3px 0;
     transition: ${({ theme }) => theme.transitions.fast};
     transform-origin: center;
+    border-radius: 2px;
     
     &:first-child {
       margin-top: 0;
@@ -118,38 +126,26 @@ export const MobileMenuButton = styled.button`
 export const MobileMenu = styled.div`
   display: none;
   position: absolute;
-  top: 100%;
-  left: 0;
-  right: 0;
+  top: calc(100% + 0.5rem);
+  left: 2rem;
+  right: 2rem;
   background-color: ${({ theme }) => theme.colors.white};
-  border-top: 1px solid ${({ theme }) => theme.colors.lightGray};
+  border-radius: ${({ theme }) => theme.radii.lg};
   box-shadow: ${({ theme }) => theme.shadows.lg};
   padding: ${({ theme }) => theme.spacing.md};
-  transform: ${({ $isOpen }) => $isOpen ? 'translateY(0)' : 'translateY(-10px)'};
+  transform: ${({ $isOpen }) => $isOpen ? 'translateY(0)' : 'translateY(-12px)'};
   opacity: ${({ $isOpen }) => $isOpen ? 1 : 0};
   visibility: ${({ $isOpen }) => $isOpen ? 'visible' : 'hidden'};
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0.2, 0.2, 1);
   
   @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
     display: block;
   }
   
   ${NavItem} {
-    margin-bottom: ${({ theme }) => theme.spacing.sm};
+    margin-bottom: 0;
     
     &:last-child {
       margin-bottom: 0;
-    }
-  }
-  
-  ${NavLink} {
-    display: block;
-    padding: ${({ theme }) => theme.spacing.sm};
-    font-size: ${({ theme }) => theme.fontSizes.lg};
-    border-bottom: 1px solid ${({ theme }) => theme.colors.lightGray};
-    
-    &:last-child {
-      border-bottom: none;
-    }
   }
 `;

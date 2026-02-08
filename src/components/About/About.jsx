@@ -95,8 +95,8 @@ const About = () => {
       description: "Completed internship at Integrated Digital Systems, applying skills in real-world projects."
     },
     {
-      title: "Ready for Impact",
-      description: "Now seeking to contribute to innovative teams and continue growing as a software engineer."
+      title: "Junior Software Engineer",
+      description: "Currently at The ARK Networks, developing and maintaining production web applications using React, Next.js, and TypeScript in an Agile environment."
     }
   ];
 
@@ -138,25 +138,20 @@ const About = () => {
               <motion.div variants={itemVariants}>
                 <AboutDescription>
                   <p>
-                    I'm a <AboutHighlight>Computer Science graduate</AboutHighlight> with a unique blend 
-                    of technical expertise and teaching experience. My journey combines hands-on software 
-                    development with a passion for mentoring others.
+                    I'm a <AboutHighlight>Junior Software Engineer at The ARK Networks</AboutHighlight>, where I develop and maintain user-facing features for production web applications using React, Next.js, and TypeScript. As a <AboutHighlight>Computer Science graduate</AboutHighlight>, I bring both technical depth and a unique perspective shaped by mentoring 15+ students in web development.
                   </p>
                   <p>
-                    What sets me apart is my ability to <AboutHighlight>communicate complex technical concepts clearly</AboutHighlight> - 
-                    a skill honed through successfully mentoring 15+ students with a 90%+ completion rate.
+                    What truly sets me apart is my ability to <AboutHighlight>bridge the gap between technical excellence and clear communication</AboutHighlight>. In my current role, I collaborate seamlessly with designers and backend engineers in an Agile environment, delivering end-to-end features while continuously optimizing performance and stability. This collaborative mindset stems from my teaching experience, where I achieved a 90%+ student completion rate by breaking down complex concepts into actionable, project-based learning.
                   </p>
                   <p>
-                    I specialize in full-stack development using modern technologies like React, Laravel, 
-                    and PostgreSQL, always focusing on <AboutHighlight>clean, maintainable code</AboutHighlight> and 
-                    innovative problem-solving approaches.
+                    I'm passionate about building <AboutHighlight>scalable, maintainable solutions</AboutHighlight> that not only solve immediate problems but scale with growing demands. My full-stack expertise spans React, Next.js, Laravel, PostgreSQL, and modern development practices—all in service of creating software that makes an impact and can be understood, maintained, and improved by others.
                   </p>
                 </AboutDescription>
               </motion.div>
             </AboutText>
           </AboutHero>
 
-          <motion.div variants={itemVariants}>
+          {/* <motion.div variants={itemVariants}>
             <MetricsGrid>
               {metrics.map((metric, index) => (
                 <MetricCard
@@ -171,9 +166,9 @@ const About = () => {
                 </MetricCard>
               ))}
             </MetricsGrid>
-          </motion.div>
+          </motion.div> */}
 
-          <ValuesSection>
+          {/* <ValuesSection>
             <motion.div variants={itemVariants}>
               <h3>What Drives Me</h3>
             </motion.div>
@@ -194,7 +189,7 @@ const About = () => {
                 ))}
               </div>
             </motion.div>
-          </ValuesSection>
+          </ValuesSection> */}
 
           <JourneySection>
             <motion.div variants={itemVariants}>

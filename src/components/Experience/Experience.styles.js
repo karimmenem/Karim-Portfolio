@@ -129,20 +129,19 @@ export const TimelineDot = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 60px;
-  height: 60px;
-  background: ${({ $isActive, theme }) => 
-    $isActive ? theme.colors.gradientPrimary : theme.colors.white};
-  border: 3px solid ${({ theme }) => theme.colors.primary};
+  width: 70px;
+  height: 70px;
+  background: ${({ theme }) => theme.colors.white};
+  border: 3px solid #1E90FF;
   border-radius: 50%;
-  color: ${({ $isActive, theme }) => 
-    $isActive ? theme.colors.white : theme.colors.primary};
+  color: #1E90FF;
   font-size: ${({ theme }) => theme.fontSizes.lg};
   position: relative;
   z-index: 3;
   flex-shrink: 0;
   margin-right: ${({ theme }) => theme.spacing.xl};
-  box-shadow: 0 4px 15px ${({ theme }) => theme.colors.primary}30;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
 `;
 
 export const TimelineLine = styled.div`
@@ -193,15 +192,53 @@ export const ExperienceIcon = styled.div`
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 50px;
-  height: 50px;
-  background: ${({ $type, theme }) => 
-    $type === 'teaching' ? theme.colors.secondary : theme.colors.primary}15;
-  border-radius: ${({ theme }) => theme.borderRadius.lg};
-  color: ${({ $type, theme }) => 
-    $type === 'teaching' ? theme.colors.secondary : theme.colors.primary};
-  font-size: ${({ theme }) => theme.fontSizes.lg};
-  margin-bottom: ${({ theme }) => theme.spacing.md};
+  width: 70px;
+  height: 70px;
+  background: ${({ $type, theme, $hasLogo }) => {
+    if ($hasLogo) {
+      return theme.colors.white;
+    }
+    return $type === 'teaching' 
+      ? 'linear-gradient(135deg, #FF8C00 0%, #FFA726 100%)'
+      : $type === 'work'
+      ? 'linear-gradient(135deg, #1E90FF 0%, #63B3ED 100%)'
+      : 'linear-gradient(135deg, #38A169 0%, #48BB78 100%)';
+  }};
+  border-radius: ${({ theme }) => theme.borderRadius.xl};
+  color: ${({ theme }) => theme.colors.white};
+  font-size: ${({ theme }) => theme.fontSizes.xl};
+  margin-bottom: ${({ theme }) => theme.spacing.lg};
+  border: ${({ $hasLogo, theme }) => $hasLogo ? `2px solid ${theme.colors.lightGray}` : 'none'};
+  overflow: hidden;
+  position: relative;
+  flex-shrink: 0;
+  box-shadow: ${({ $hasLogo, theme, $type }) => {
+    if ($hasLogo) {
+      return theme.shadows.md;
+    }
+    return $type === 'teaching' 
+      ? '0 10px 30px rgba(255, 140, 0, 0.25)'
+      : $type === 'work'
+      ? '0 10px 30px rgba(30, 144, 255, 0.25)'
+      : '0 10px 30px rgba(56, 161, 105, 0.25)';
+  }};
+  transition: all 0.3s ease;
+  
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: ${({ theme }) => theme.spacing.sm};
+    display: block;
+  }
+  
+  .fallback-icon {
+    display: ${({ $hasLogo }) => $hasLogo ? 'none' : 'flex'};
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+  }
 `;
 
 export const ExperienceDetails = styled.div`

@@ -117,7 +117,7 @@ const Experience = () => {
           </ExperienceHeader>
 
           {/* Stats Overview */}
-          <motion.div variants={itemVariants}>
+          {/* <motion.div variants={itemVariants}>
             <StatsGrid>
               {experienceStats.map((stat, index) => (
                 <StatCard
@@ -134,7 +134,7 @@ const Experience = () => {
                 </StatCard>
               ))}
             </StatsGrid>
-          </motion.div>
+          </motion.div> */}
 
           {/* Experience Timeline */}
           <TimelineContainer>
@@ -147,6 +147,7 @@ const Experience = () => {
                     as={motion.div}
                     variants={itemVariants}
                     $isActive={index === 0}
+                    $type={exp.type}
                   >
                     <IconComponent />
                   </TimelineDot>
@@ -159,8 +160,20 @@ const Experience = () => {
                     whileHover={{ x: 10 }}
                     transition={{ duration: 0.3 }}
                   >
-                    <ExperienceIcon $type={exp.type}>
-                      <IconComponent />
+                    <ExperienceIcon $type={exp.type} $hasLogo={exp.logo}>
+                      {exp.logo ? (
+                        <img 
+                          src={exp.logo} 
+                          alt={`${exp.company} logo`}
+                          onError={(e) => {
+                            e.target.style.display = 'none';
+                            e.target.nextSibling.style.display = 'flex';
+                          }}
+                        />
+                      ) : null}
+                      <div className="fallback-icon">
+                        <IconComponent />
+                      </div>
                     </ExperienceIcon>
                     
                     <ExperienceDetails>

@@ -3,7 +3,7 @@ export const theme = {
     // Core bright palette
     primary: '#1E90FF',        // Dodger blue
     secondary: '#FF8C00',      // Dark orange
-    accent: '#FF4081',         // Vibrant pink
+    accent: '#1E90FF',         // Vibrant pink
     background: '#F7FAFC',     // Light cool gray
     surface: '#FFFFFF',        // White surfaces
     border: '#E2E8F0',         // Gray border

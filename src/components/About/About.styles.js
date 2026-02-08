@@ -323,6 +323,8 @@ export const JourneySteps = styled.div`
 `;
 
 export const JourneyStep = styled.div`
+  display: flex;
+  flex-direction: column;
   background: ${({ theme }) => theme.colors.backgroundCard};
   padding: ${({ theme }) => theme.spacing.xl};
   border-radius: ${({ theme }) => theme.borderRadius.xl};
@@ -332,6 +334,7 @@ export const JourneyStep = styled.div`
   will-change: transform;
   position: relative;
   overflow: hidden;
+  height: 100%;
   
   &::before {
     content: '';
@@ -367,15 +370,21 @@ export const StepNumber = styled.div`
   font-size: ${({ theme }) => theme.fontSizes.lg};
   font-weight: ${({ theme }) => theme.fontWeights.bold};
   margin-bottom: ${({ theme }) => theme.spacing.md};
+  flex-shrink: 0;
 `;
 
-export const StepContent = styled.div``;
+export const StepContent = styled.div`
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+`;
 
 export const StepTitle = styled.h4`
   color: ${({ theme }) => theme.colors.dark};
   font-size: ${({ theme }) => theme.fontSizes.lg};
   font-weight: ${({ theme }) => theme.fontWeights.semibold};
   margin-bottom: ${({ theme }) => theme.spacing.sm};
+  margin: 0 0 ${({ theme }) => theme.spacing.sm} 0;
 `;
 
 export const StepDescription = styled.p`
@@ -383,4 +392,5 @@ export const StepDescription = styled.p`
   line-height: 1.6;
   margin: 0;
   font-size: ${({ theme }) => theme.fontSizes.sm};
+  flex: 1;
 `;

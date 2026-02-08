@@ -105,19 +105,7 @@ const Projects = () => {
                 A showcase of my technical skills through real-world applications
               </ProjectsSubtitle>
             </motion.div>
-            <motion.div variants={itemVariants}>
-              <FilterContainer>
-                {categories.map(cat => (
-                  <FilterButton
-                    key={cat}
-                    className={selectedCategory === cat ? 'active' : ''}
-                    onClick={() => setSelectedCategory(cat)}
-                  >
-                    {cat}
-                  </FilterButton>
-                ))}
-              </FilterContainer>
-            </motion.div>
+         
           </ProjectsHeader>
 
           <ProjectsGrid>
@@ -128,10 +116,8 @@ const Projects = () => {
                 <motion.div key={project.id} variants={itemVariants}>
                   <ProjectCard
                     as={motion.div}
-                    onHoverStart={() => setHoveredProject(project.id)}
+        
                     onHoverEnd={() => setHoveredProject(null)}
-                    whileHover={{ y: -10 }}
-                    transition={{ duration: 0.3 }}
                   >
                     <ProjectImageContainer>
                       <ProjectImage $hasImage={project.image}>
@@ -217,9 +203,10 @@ const Projects = () => {
                             target="_blank"
                             rel="noopener noreferrer"
                             $primary={true}
+                            $noHover={true}
                           >
                             <FiExternalLink />
-                            Live Demo
+                            Live Website
                           </ProjectLink>
                         ) : project.githubUrl ? (
                           <ProjectLink

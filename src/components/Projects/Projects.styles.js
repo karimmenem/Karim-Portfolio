@@ -99,10 +99,6 @@ export const ProjectCard = styled.div`
   border: 1px solid ${({ theme }) => theme.colors.lightGray}20;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   will-change: transform;
-  
-  &:hover {
-    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
-  }
 `;
 
 export const ProjectImageContainer = styled.div`
@@ -262,50 +258,19 @@ export const ProjectLinks = styled.div`
 export const ProjectLink = styled.a`
   display: flex;
   align-items: center;
+  color: ${({ theme }) => theme.colors.primary};
   gap: ${({ theme }) => theme.spacing.xs};
   padding: ${({ theme }) => `${theme.spacing.sm} ${theme.spacing.md}`};
   border-radius: ${({ theme }) => theme.borderRadius.lg};
   font-size: ${({ theme }) => theme.fontSizes.sm};
   font-weight: ${({ theme }) => theme.fontWeights.semibold};
   text-decoration: none;
-  transition: all 0.3s ease;
+  transition: ${({ $noHover }) => $noHover ? 'none' : 'all 0.3s ease'};
   justify-content: center;
   flex: 1;
   cursor: ${({ $disabled }) => $disabled ? 'not-allowed' : 'pointer'};
-  
-  ${({ $primary, $disabled, theme }) => {
-    if ($disabled) {
-      return `
-        background: ${theme.colors.lightGray}30;
-        color: ${theme.colors.gray}60;
-        border: 1px solid ${theme.colors.lightGray}30;
-        opacity: 0.6;
-        
-        &:hover {
-          background: ${theme.colors.lightGray}30;
-          color: ${theme.colors.gray}60;
-        }
-      `;
-    }
-    
-    return $primary ? `
-      background: ${theme.colors.gradientPrimary};
-      color: ${theme.colors.white};
-      
-      &:hover {
-        transform: translateY(-2px);
-        box-shadow: ${theme.shadows.lg};
-      }
-    ` : `
-      background: transparent;
-      color: ${theme.colors.gray};
-      border: 1px solid ${theme.colors.lightGray};
-      
-      &:hover {
-        background: ${theme.colors.light};
-        color: ${theme.colors.dark};
-        border-color: ${theme.colors.primary};
-      }
-    `;
-  }}
+
+  &:hover {
+    background: ${({ theme }) => theme.colors.primary}20;
+  }
 `;
