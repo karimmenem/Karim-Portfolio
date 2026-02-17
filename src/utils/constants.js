@@ -107,26 +107,10 @@ export const personalInfo = {
       category: "Business",
     },
     
-    {
-      id: 4,
-      title: "Encelyte",
-      description: "Professional IT consulting and digital transformation company website offering cutting-edge technology solutions across Europe and MEA regions.",
-      technologies: ["React", "JavaScript", "CSS3"],
-      features: [
-        "Modern responsive design with smooth animations",
-        "Strategic consulting and IT services showcase",
-        "Regional market presence across Europe and MEA",
-        "Professional portfolio and client testimonials",
-        "Contact forms and business inquiry system"
-      ],
-      githubUrl: "https://github.com/karimmenem/Encelyte_React",
-      liveUrl: "https://encelyte.vercel.app/",
-      image: "/images/Encelyte.png",
-      category: "Business",
-    },
+   
     
     {
-      id: 5,
+      id: 4,
       title: "Share Space Platform",
       description: "Full-stack social platform for content creation and sharing with secure authentication and real-time features.",
       technologies: ["Laravel", "PHP", "PostgreSQL"],
