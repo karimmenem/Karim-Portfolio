@@ -111,7 +111,7 @@ export const personalInfo = {
     
     {
       id: 4,
-      title: "Share Space Platform",
+      title: "Share Space",
       description: "Full-stack social platform for content creation and sharing with secure authentication and real-time features.",
       technologies: ["Laravel", "PHP", "PostgreSQL"],
       features: [
